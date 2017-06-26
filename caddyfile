@@ -1,0 +1,13 @@
+jd.courtoy.io {
+    proxy /blog proxy.blog {
+        transparent
+    }
+
+    proxy /resume web.resume:8080 {
+        transparent
+    }
+
+    expvar /stats
+
+    tls jd@courtoy.io
+}

@@ -1,13 +1,13 @@
-jd.courtoy.io {
-    proxy /blog proxy.blog {
+{$DOMAINS} {
+    proxy /resume {$RESUME_HOST}.{$DNS_SEARCH}:{$RESUME_PORT} {
         transparent
+        without /resume
+    }
+    proxy /blog {$BLOG_HOST}.{$DNS_SEARCH}:{$BLOG_PORT} {
+        transparent
+        without /blog
     }
 
-    proxy /resume web.resume:8080 {
-        transparent
-    }
-
-    expvar /stats
-
-    tls jd@courtoy.io
+    redir /resume /resume/
+    redir /blog /blog/
 }

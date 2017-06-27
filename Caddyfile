@@ -10,4 +10,6 @@
 
     redir /resume /resume/
     redir /blog /blog/
+
+    tls {$TLS_EMAIL}
 }

@@ -3,13 +3,12 @@
         transparent
         without /resume
     }
-    proxy /blog {$BLOG_HOST}.{$DNS_SEARCH}:{$BLOG_PORT} {
+    proxy / {$BLOG_HOST}.{$DNS_SEARCH}:{$BLOG_PORT} {
         transparent
-        without /blog
     }
 
     redir /resume /resume/
-    redir /blog /blog/
+    redir /blog /
 
     tls {$TLS_EMAIL}
 }
